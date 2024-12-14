@@ -36,33 +36,33 @@ button.addEventListener("click", (event) => {
       break;
     case "clorpromazina":
       nameMed.textContent = `${medSelected}:`;
-      text.textContent = `${Math.ceil(
+      text.textContent = `<span>${Math.ceil(
         calculation / totalClorpromazina
-      )} frasco(s) para 60 dias.`;
+      )} frasco(s)</span> para 60 dias.`;
       break;
     case "fenobarbital":
       nameMed.textContent = `${medSelected}:`;
-      text.textContent = `${Math.ceil(
+      text.textContent = `<span>${Math.ceil(
         calculation / totalFenobarbital
-      )} frasco(s) para 60 dias.`;
+      )} frasco(s)</span> para 60 dias.`;
       break;
     case "haloperidol":
       nameMed.textContent = `${medSelected}:`;
-      text.textContent = `${Math.ceil(
+      text.textContent = `<span>${Math.ceil(
         calculation / totalHaloperidol
-      )} frasco(s) para 60 dias.`;
+      )} frasco(s)</span> para 60 dias.`;
       break;
     case "levomepromazina":
       nameMed.textContent = `${medSelected}:`;
-      text.textContent = `${Math.ceil(
+      text.textContent = `<span>${Math.ceil(
         calculation / totalLevomepromazina
-      )} frasco(s) para 60 dias.`;
+      )} frasco(s)</span> para 60 dias.`;
       break;
     case "periciazina":
       nameMed.textContent = `${medSelected}:`;
-      text.textContent = `${Math.ceil(
+      text.textContent = `<span>${Math.ceil(
         calculation / totalPericiazina
-      )} frasco(s) para 60 dias.`;
+      )} frasco(s)</span> para 60 dias.`;
       break;
     default:
       alert("Opção inválida!");
