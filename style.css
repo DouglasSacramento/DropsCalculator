@@ -84,6 +84,10 @@ h2 {
   text-transform: capitalize;
 }
 
+input{
+    width: 150px;
+}
+
 input,
 button,
 select {
@@ -106,7 +110,7 @@ button:hover {
 }
 
 select {
-  width: fit-content;
+  width: 160px;
 }
 
 footer p {
