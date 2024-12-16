@@ -20,8 +20,6 @@ const clearResult = () => {
   }
 };
 
-clearResult();
-
 function resultScreen(med, calc, total) {
   nameMed.textContent = `${med}:`;
   text.innerHTML = `<span>${Math.ceil(
