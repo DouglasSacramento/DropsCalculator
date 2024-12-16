@@ -17,12 +17,15 @@ const clearResult = () => {
   if (select.value !== "Selecione") {
     nameMed.textContent = "";
     text.innerHTML = "";
+    input.value = "";
   }
 };
 
 clearResult();
 
 function resultScreen(med, calc, total) {
+  input.value = `${input.value} gotas`;
+
   nameMed.textContent = `${med}:`;
   text.innerHTML = `<span>${Math.ceil(
     calc / total
@@ -67,7 +70,6 @@ button.addEventListener("click", (event) => {
   }
 
   select.value = "Selecione";
-  input.value = "";
 });
 
 input.addEventListener("input", () => {
