@@ -75,3 +75,8 @@ button.addEventListener("click", (event) => {
 input.addEventListener("input", () => {
   input.value = input.value.trim().replace(/\D+/g, "");
 });
+
+window.addEventListener('load', () => {
+    input.value = ""
+})
+
