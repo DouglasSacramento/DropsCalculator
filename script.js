@@ -13,9 +13,21 @@ const totalHaloperidol = 400;
 const totalLevomepromazina = 800;
 const totalPericiazina = 800;
 
-input.addEventListener("input", () => {
-  input.value = input.value.trim().replace(/\D+/g, "");
-});
+const clearResult = () => {
+  if (select.value !== "Selecione") {
+    nameMed.textContent = "";
+    text.innerHTML = "";
+  }
+};
+
+clearResult();
+
+function resultScreen(med, calc, total) {
+  nameMed.textContent = `${med}:`;
+  text.innerHTML = `<span>${Math.ceil(
+    calc / total
+  )} frasco(s)</span> para 60 dias.`;
+}
 
 button.addEventListener("click", (event) => {
   event.preventDefault();
@@ -23,52 +35,41 @@ button.addEventListener("click", (event) => {
   const amountSolicited = input.value.trim().replace(/\D+/g, "");
   const calculation = Number(amountSolicited) * 60;
 
-  if (medSelected === "Selecione" || amountSolicited == "") {
-    return alert("Opção inválida!");
+  if (medSelected === "Selecione") {
+    alert("Opção inválida! Tente novamente.");
+    return;
+  } else if (!amountSolicited) {
+    alert("Necessário inserir a quantidade de gotas!");
+    return;
   }
 
   switch (medSelected) {
     case "clonazepan":
-      nameMed.textContent = `${medSelected}:`;
-      text.innerHTML = `<span>${Math.ceil(
-        calculation / totalClonazepan
-      )} frasco(s)</span> para 60 dias.`;
+      resultScreen(medSelected, calculation, totalClonazepan);
       break;
     case "clorpromazina":
-      nameMed.textContent = `${medSelected}:`;
-      text.innerHTML = `<span>${Math.ceil(
-        calculation / totalClorpromazina
-      )} frasco(s)</span> para 60 dias.`;
+      resultScreen(medSelected, calculation, totalClorpromazina);
       break;
     case "fenobarbital":
-      nameMed.textContent = `${medSelected}:`;
-      text.innerHTML = `<span>${Math.ceil(
-        calculation / totalFenobarbital
-      )} frasco(s)</span> para 60 dias.`;
+      resultScreen(medSelected, calculation, totalFenobarbital);
       break;
     case "haloperidol":
-      nameMed.textContent = `${medSelected}:`;
-      text.innerHTML = `<span>${Math.ceil(
-        calculation / totalHaloperidol
-      )} frasco(s)</span> para 60 dias.`;
+      resultScreen(medSelected, calculation, totalHaloperidol);
       break;
     case "levomepromazina":
-      nameMed.textContent = `${medSelected}:`;
-      text.innerHTML = `<span>${Math.ceil(
-        calculation / totalLevomepromazina
-      )} frasco(s)</span> para 60 dias.`;
+      resultScreen(medSelected, calculation, totalLevomepromazina);
       break;
     case "periciazina":
-      nameMed.textContent = `${medSelected}:`;
-      text.innerHTML = `<span>${Math.ceil(
-        calculation / totalPericiazina
-      )} frasco(s)</span> para 60 dias.`;
+      resultScreen(medSelected, calculation, totalPericiazina);
       break;
     default:
-      alert("Opção inválida!");
       return;
   }
 
   select.value = "Selecione";
   input.value = "";
+});
+
+input.addEventListener("input", () => {
+  input.value = input.value.trim().replace(/\D+/g, "");
 });
