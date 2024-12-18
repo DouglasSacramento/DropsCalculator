@@ -6,10 +6,6 @@ const nameMed = document.querySelector("h2");
 const text = document.querySelector("p");
 const dialog = document.querySelector("dialog");
 
-const containerVolume_800 = 800;
-const containerVolume_520 = 520;
-const containerVolume_400 = 400;
-
 const clearResult = () => {
   if (select.value !== "Selecione") {
     nameMed.textContent = "";
@@ -43,27 +39,21 @@ button.addEventListener("click", (event) => {
     return;
   }
 
-  switch (medSelected) {
-    case "clonazepan":
-      resultScreen(medSelected, calculation, containerVolume_520);
-      break;
-    case "clorpromazina":
-      resultScreen(medSelected, calculation, containerVolume_800);
-      break;
-    case "fenobarbital":
-      resultScreen(medSelected, calculation, containerVolume_800);
-      break;
-    case "haloperidol":
-      resultScreen(medSelected, calculation, containerVolume_400);
-      break;
-    case "levomepromazina":
-      resultScreen(medSelected, calculation, containerVolume_800);
-      break;
-    case "periciazina":
-      resultScreen(medSelected, calculation, containerVolume_800);
-      break;
-    default:
-      return;
+  const containerDrops = [400, 520, 800];
+
+  const medToDrops = {
+    clonazepan: containerDrops[1],
+    clorpromazina: containerDrops[2],
+    fenobarbital: containerDrops[2],
+    haloperidol: containerDrops[0],
+    levomepromazina: containerDrops[2],
+    periciazina: containerDrops[2],
+  };
+
+  if (medToDrops[medSelected]) {
+    resultScreen(medSelected, calculation, medToDrops[medSelected]);
+  } else {
+    return;
   }
 
   select.value = "Selecione";
