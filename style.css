@@ -9,6 +9,10 @@
   font-style: normal;
 }
 
+option {
+  font-family: "Poppins", serif;
+}
+
 body {
   overflow: hidden;
   background-color: #000000d0;
@@ -23,7 +27,7 @@ body {
   max-width: 90%;
   padding: 0 5px;
   height: 55vh;
-  margin: 10% auto;
+  margin: 10% auto 2rem;
   border-radius: 4px;
 
   background-color: #ffffff;
@@ -111,6 +115,7 @@ button:hover {
 
 select {
   width: 160px;
+  color: #000;
 }
 
 footer p {
