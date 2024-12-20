@@ -14,8 +14,6 @@ const clearResult = () => {
   }
 };
 
-clearResult();
-
 function resultScreen(med, calc, total) {
   input.value = `${input.value} gotas`;
 
@@ -25,6 +23,7 @@ function resultScreen(med, calc, total) {
   )} frasco(s)</span> para 60 dias.`;
 }
 
+clearResult();
 button.addEventListener("click", (event) => {
   event.preventDefault();
   const medSelected = select.value;
