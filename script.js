@@ -39,15 +39,13 @@ button.addEventListener("click", (event) => {
     return;
   }
 
-  const containerDrops = [400, 520, 800];
-
   const medToDrops = {
-    clonazepan: containerDrops[1],
-    clorpromazina: containerDrops[2],
-    fenobarbital: containerDrops[2],
-    haloperidol: containerDrops[0],
-    levomepromazina: containerDrops[2],
-    periciazina: containerDrops[2],
+    clonazepan: 520,
+    clorpromazina: 800,
+    fenobarbital: 800,
+    haloperidol: 400,
+    levomepromazina: 800,
+    periciazina: 800,
   };
 
   if (medToDrops[medSelected]) {
