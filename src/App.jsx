@@ -28,17 +28,17 @@ function App() {
 
   return (
     <div className="flex flex-col gap-6 justify-center items-center h-screen w-screen bg-zinc-800 ">
-      <div className="rounded p-9 container max-w-xl h-96 bg-white">
-        <div className="text-center flex flex-col items-center justify-center h-1/2">
-          <h1 className="text-3xl font-bold uppercase text-zinc-700">
+      <div className="rounded container max-w-sm md:max-w-xl h-96 bg-white">
+        <div className="text-center flex flex-col items-center justify-center h-2/5 md:h-1/2">
+          <h1 className="text-[23px] md:text-3xl font-bold uppercase text-zinc-700">
             Calculadora de gotas
           </h1>
-          <p className="text-base tracking-widest text-zinc-700 font-light">
+          <p className="text-sm md:text-base tracking-widest text-zinc-700 font-light">
             (Psicotrópicos)
           </p>
         </div>
 
-        <div className="flex gap-2 justify-center ">
+        <div className="flex flex-wrap justify-center gap-2 md:flex-row ">
           <select
             className="pl-1 pt-2 pb-2 w-40 text-sm rounded-md border border-zinc-400 focus:outline-sky-500"
             name="medications"
@@ -71,12 +71,12 @@ function App() {
             type="button"
             value="Calcular"
             onClick={Calculate}
-            className="rounded-md text-sm font-semibold bg-sky-500 text-white px-4 hover:cursor-pointer hover:bg-sky-400 hover:transition-all"
+            className="rounded-md text-sm font-semibold bg-sky-500 text-white py-2 px-32 md:px-4 hover:cursor-pointer hover:bg-sky-400 hover:transition-all"
           />
         </div>
         {amount !== "" && (
           <div className="flex justify-center mt-10 h-1/2 ">
-            <p className="text-xl font-bold text-zinc-700">
+            <p className="text-base md:text-xl font-bold text-zinc-700">
               <span className="text-sky-500 ">{medication}:</span> {amount}
               {amount > 1 ? " frascos" : " frasco"}
               <span className="font-normal"> para 60 dias.</span>
@@ -84,7 +84,7 @@ function App() {
           </div>
         )}
       </div>
-      <p className="text-zinc-600 text-xs">
+      <p className="text-zinc-600 text-[.6rem] md:text-xs">
         &copy; 2024-{new Date().getFullYear()} DSacramento. Todos os direitos
         reservados.
       </p>
